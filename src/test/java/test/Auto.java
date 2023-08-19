@@ -13,7 +13,7 @@ public class Auto {
 		int x = 0;
 		int i = 0;
 		for(i= 0; i < asientos.length; i++) {
-			if (asientos[i].getClass().getName() == "Asiento") {
+			if (asientos[i].getClass().getSimpleName() == "Asiento") {
 				x++;
 			}
 		}
@@ -25,7 +25,7 @@ public class Auto {
 		int y = 0;
 		if(this.registro == motor.registro) {
 			for(int i= 0; i < asientos.length; i++) {
-				if (asientos[i].getClass().getName() == "Asiento") {
+				if (asientos[i].getClass().getSimpleName() == "Asiento") {
 					x ++;
 					if(asientos[i].registro == motor.registro) {
 					y++;	
