@@ -13,7 +13,10 @@ public class Auto {
 		int x = 0;
 		int i = 0;
 		for(i= 0; i < asientos.length; i++) {
-			if (asientos[i].getClass().getSimpleName() == "Asiento") {
+			if (asientos[i] == null) {
+	
+			}
+			else {
 				x++;
 			}
 		}
@@ -23,23 +26,16 @@ public class Auto {
 	public String verificarIntegridad() {
 		int x = 0;
 		int y = 0;
-		if(this.registro == motor.registro) {
+		if(registro == motor.registro) {
 			for(int i= 0; i < asientos.length; i++) {
-				if (asientos[i].getClass().getSimpleName() == "Asiento") {
-					x ++;
-					if(asientos[i].registro == motor.registro) {
-					y++;	
+				if (asientos[i] != null) {
+					if (asientos[i].registro != registro) {
+						return "Las piezas no son originales";
 					}
-				}			
-		    } 	
-	    }
-		if (x == y) {
-			return "Auto original";
+				}
+			}
 		}
-		else {
-			return "Las piezas no son originales";
-		}
-    }
-	
-
-}
+		return "Auto original";
+	}
+					
+    
