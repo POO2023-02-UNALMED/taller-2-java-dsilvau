@@ -9,6 +9,20 @@ public class Auto {
 	int registro;
 	static int cantidadCreados;
 	
+	public int cantidadAsientos() {
+		int x = 0;
+		int i = 0;
+		for(i= 0; i < asientos.length; i++) {
+			if (asientos[i].getClass().getName() == "Asiento") {
+				x++;
+			}
+		}
+		return x;
+	}
+	
+	public String verificarIntegridad() {
+		
+	}
 
 	
 
